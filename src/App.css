@@ -1,0 +1,113 @@
+.App {
+  text-align: center;
+}
+
+.nav-link a{
+  text-decoration: none !important;
+  color: #8d8d91 !important;
+}
+
+.nav-link a:hover{
+  color: white !important;
+}
+
+.nav-link a.active{
+  color:white !important;
+}
+
+
+.test{
+  color: blue;
+}
+
+
+.card{
+  margin: 50px auto;
+}
+
+.card-img-top{
+  height: 200px;
+    object-fit: contain;
+}
+
+.add{
+  width: 60%;
+  margin: 100px auto;
+}
+
+.nav-tabs{
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.nav-tabs .nav-link.active{
+  color: white !important;
+  background-color: rgb(32, 32, 32) !important;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.thumbnail{
+  height:50px;
+  object-fit: auto;
+  border-radius: 15px;
+  margin-right: 30px;
+}
+
+.number{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  margin: 10px auto;
+  color: white;
+  background-color: blueviolet;
+  border-radius: 50%;
+}
+
+.score{
+  width: 50px;
+  height: 50px;
+  font-size:25px;
+  font-weight: 600;
+  background-color: crimson;
+}
+
+.login{
+  width:70% ;
+  padding:50px;
+  border: solid 2px rgb(201, 201, 201);
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  margin:50px auto;
+}
+
+form button{
+  width: 100% !important;
+}
+
+.form-select{
+  margin: 20px auto;
+}
+
+.option{
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 15px;
+  border: solid 2px gray;
+}
+
+.answer{
+  display: block;
+  text-align: center;
+  width:70px !important;
+  height: 70px;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  background-color: crimson;
+  margin-top: -20%;
+}
+
