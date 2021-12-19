@@ -39,11 +39,7 @@ class AddQuestion extends Component{
     render(){
 
         const{firstFeild, secondFeild} = this.state
-        const{authedUser} = this.props
 
-        if(authedUser === null){
-            return <Redirect to='/' />
-        }
 
         if(this.state.redirect){
             return <Redirect to='/home' />

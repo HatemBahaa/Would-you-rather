@@ -34,11 +34,12 @@ class LogIn extends Component {
 
     render(){ 
         
-        const {users} = this.props
-
-        if(this.state.redirect){
-            return <Redirect to="/home" />    
+        const {users,location} = this.props
+        
+       if(this.state.redirect){         
+            return <Redirect to= {location.state?.from || '/home'} />    
         }
+        
         return(
             <div className='login'> 
                 <h1>Welcome To Would You Rather App</h1>
@@ -59,9 +60,10 @@ class LogIn extends Component {
 }
 
 
-function mapStateToProps( {users} ){ 
+function mapStateToProps( {users, authedUser} ){ 
     return {
       users: Object.keys(users),
+      authedUser,
     }
   }
   

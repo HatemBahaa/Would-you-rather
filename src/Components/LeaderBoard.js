@@ -1,18 +1,15 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Card} from 'react-bootstrap'
-import {Redirect} from 'react-router-dom'
+
 
 class LeaderBoard extends Component {
        
     render(){
 
-        const {authedUser, users, leaderBoard} = this.props
+        const {users, leaderBoard} = this.props
         let counter = 1
 
-        if(authedUser === null){
-            return <Redirect to='/' />
-        }
         return(
             <div>
                 <ul>

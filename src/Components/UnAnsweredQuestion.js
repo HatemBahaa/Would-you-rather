@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Card, Button,Form } from 'react-bootstrap'
 import {Redirect} from 'react-router-dom'
 import { handleAnswerQuestion } from '../Actions/shared'
+import { withRouter } from 'react-router-dom/cjs/react-router-dom.min'
 
 
 
@@ -39,14 +40,13 @@ class UnAnsweredQuestion extends Component {
 
     render(){       
 
-        const {question, userAvatar, author, id, authedUser}=this.props
-
-        if(authedUser === null){
-            return <Redirect to='/' />
-        }
+        const {question, userAvatar, author, id}=this.props
 
         if(this.state.redirect){
-            return <Redirect to={`/answered-poll/${id}`} /> 
+            return <Redirect to={{
+                pathname:`/questions/${id}`,
+                questionType: 'answered'
+            }} /> 
         }
         return(
             <div>
@@ -87,12 +87,12 @@ class UnAnsweredQuestion extends Component {
 
 function mapStateToProps({questions, users, authedUser}, {id}){
 
-    return{
-        question : questions[id],
-        userAvatar : users[questions[id].author].avatarURL,
-        author: users[questions[id].author].name,
-        authedUser,
-    }
+        return{
+            question : questions[id],
+            userAvatar : users[questions[id].author].avatarURL,
+            author: users[questions[id].author].name,
+            authedUser,
+        }
 }
 
-export default connect(mapStateToProps)(UnAnsweredQuestion)
+export default withRouter(connect(mapStateToProps)(UnAnsweredQuestion))

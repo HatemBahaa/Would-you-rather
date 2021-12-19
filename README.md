@@ -1,6 +1,14 @@
 # Would You Rather Project
 
-This is a project called would you rather which enable the user to answer multibale would you rather questions. after login the user is shown a list of answerd and unanswered question if the user clickeds on view poll, the user will be taken to the question page where to choose between two answers and submit the answer. the user also can add new question in  add question page and also can view the leaderboard of the most participating user in terms of number of questions created and answered
+This is a project called would you rather which enable the user to answer multiable would you rather questions. after login the user is shown a list of answerd and unanswered question if the user clickeds on view poll, the user will be taken to the question page where to choose between two answers and submit the answer. the user also can add new question in  add question page and also can view the leaderboard of the most participating user in terms of number of questions created and answered.
+
+## TL;DR
+
+To get started developing right away:
+
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
+
 
 ## Data
 

@@ -24,7 +24,7 @@ class AllQuestions extends Component {
                                 {question.optionOne.text}
                             </Card.Text>
                             
-                            {questionType === 'unanswered' && 
+                            {/* {questionType === 'unanswered' && 
                             <Link to={`/questions/${id}`}>
                                 <Button variant="outline-success">
                                     View Poll
@@ -33,7 +33,29 @@ class AllQuestions extends Component {
                             }
 
                             {questionType === 'answered' && 
-                            <Link to={`/answered-poll/${id}`}>
+                            <Link to={`/questions/${id}`}>
+                                <Button variant="outline-success">
+                                    View Poll
+                                </Button>
+                            </Link>
+                            } */}
+
+                            {questionType === 'unanswered' && 
+                            <Link to={{
+                                    pathname: `/questions/${id}`, 
+                                    questionType: questionType 
+                                }}>
+                                <Button variant="outline-success">
+                                    View Poll
+                                </Button>
+                            </Link>
+                            }
+
+                            {questionType === 'answered' && 
+                            <Link to={{
+                                pathname: `/questions/${id}`, 
+                                questionType: questionType 
+                            }}>
                                 <Button variant="outline-success">
                                     View Poll
                                 </Button>

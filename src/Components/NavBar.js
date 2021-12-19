@@ -32,7 +32,7 @@ class NavBar extends Component {
                     <Nav className="me-auto">
                         <Nav.Link as='span' ><NavLink to='/home'>Home</NavLink></Nav.Link>
                         <Nav.Link as='span' ><NavLink to='/add'>New Question</NavLink></Nav.Link>
-                        <Nav.Link as='span' ><NavLink to='/leader-board'>Leader Board</NavLink></Nav.Link>
+                        <Nav.Link as='span' ><NavLink to='/leaderboard'>Leader Board</NavLink></Nav.Link>
                     </Nav>
                     {authedUser !== null &&
                     <Nav>

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Tabs, Tab} from 'react-bootstrap'
 import AllQuestions from './AllQuestions'
-import { Redirect } from 'react-router-dom'
+
 
 
 
@@ -11,12 +11,8 @@ class Home extends Component {
 
     render(){
 
-        const {unAnsweredQuestions, answeredQuestions, authedUser}=this.props
+        const {unAnsweredQuestions, answeredQuestions}=this.props
 
-        
-        if(authedUser === null){
-            return <Redirect to='/' />
-        }
         return(
             <div>
                 {answeredQuestions

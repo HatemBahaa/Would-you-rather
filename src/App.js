@@ -5,14 +5,14 @@ import {connect} from 'react-redux'
 import LogIn from './Components/LogIn'
 import Home from './Components/Home'
 import {handleData} from './Actions/shared'
-import { BrowserRouter as Router,Route} from 'react-router-dom'
+import { BrowserRouter as Router,Route, Switch} from 'react-router-dom'
 import UnAnsweredQuestion from './Components/UnAnsweredQuestion'
 import AnsweredQuestion from './Components/AnsweredQuestion'
 import AddQuestion from './Components/AddQuestion'
 import LeaderBoard from './Components/LeaderBoard'
 import NavBar from './Components/NavBar'
-
-
+import PrivatComponents from './Components/PrivatComponents'
+import NotFoundPage from './Components/NotFoundPage'
 
 
 
@@ -38,13 +38,33 @@ class App extends Component{
       <Router>
         <div className="App">
 
-          <NavBar />
-          <Route path="/" exact render={(props) => <LogIn {...props}/>} />
-          <Route path="/home" component={Home} />
-          <Route path="/add" component={AddQuestion} />
-          <Route path="/leader-board" component={LeaderBoard} />
-          <Route path="/questions/:id" render={(props) => <UnAnsweredQuestion id={props.match.params.id}/>} />
-          <Route path="/answered-poll/:id" render={(props) => <AnsweredQuestion id={props.match.params.id}/>} />
+          <NavBar />           
+          <Switch> 
+          
+            <Route path="/" exact render={(props) => <LogIn {...props}/>} />
+            <PrivatComponents path="/home">
+                <Home />
+            </PrivatComponents>
+
+            <PrivatComponents path="/add">
+                <AddQuestion />
+            </PrivatComponents>
+
+            <PrivatComponents path="/leaderboard">
+                <LeaderBoard />
+            </PrivatComponents>
+            
+            <PrivatComponents path='/questions/:id' >
+                <UnAnsweredQuestion />
+                <AnsweredQuestion />
+            </PrivatComponents>
+
+            <PrivatComponents path='*' >
+                <NotFoundPage /> 
+            </PrivatComponents>
+                
+
+          </Switch>
 
         </div>
       </Router>
