@@ -47,7 +47,7 @@ import NotFoundPage from './NotFoundPage'
             }
 
             return checkAuth
-                    ? props.location.questionType === isAnswered
+                    ? isAnswered
                         ? React.cloneElement(children[1], {id:props.match.params.id}) : React.cloneElement(children[0], {id:props.match.params.id})
                     : <Redirect to={{
                       pathname: '/',

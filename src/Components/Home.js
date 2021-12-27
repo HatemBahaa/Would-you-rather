@@ -51,7 +51,7 @@ function mapStateToProps({ users, questions, authedUser}){
                         .find(answered => answered === question))
                         .sort((a,b) => questions[b].timestamp-questions[a].timestamp),
     
-            answeredQuestions : users[authedUser===null?'sarahedo':authedUser]?  Object.keys(users[authedUser===null?'sarahedo':authedUser].answers) : false,
+            answeredQuestions : users[authedUser===null?'sarahedo':authedUser]?  Object.keys(users[authedUser===null?'sarahedo':authedUser].answers).sort((a,b) => questions[b].timestamp-questions[a].timestamp) : false,
             authedUser,
         }
     
