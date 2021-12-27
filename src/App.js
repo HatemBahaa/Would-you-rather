@@ -13,6 +13,7 @@ import LeaderBoard from './Components/LeaderBoard'
 import NavBar from './Components/NavBar'
 import PrivatComponents from './Components/PrivatComponents'
 import NotFoundPage from './Components/NotFoundPage'
+import QuestionTypeRouter from './Components/QuestionTypeRouter'
 
 
 
@@ -54,10 +55,11 @@ class App extends Component{
                 <LeaderBoard />
             </PrivatComponents>
             
-            <PrivatComponents path='/questions/:id' >
+
+            <QuestionTypeRouter path='/questions/:id' >
                 <UnAnsweredQuestion />
-                <AnsweredQuestion />
-            </PrivatComponents>
+                <AnsweredQuestion /> 
+           </QuestionTypeRouter>
 
             <PrivatComponents path='*' >
                 <NotFoundPage /> 

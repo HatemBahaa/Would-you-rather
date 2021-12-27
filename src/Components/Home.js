@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Tabs, Tab} from 'react-bootstrap'
-import AllQuestions from './AllQuestions'
+import GeneralQuestion from './GeneralQuestion'
 
 
 
@@ -21,7 +21,7 @@ class Home extends Component {
                         <Tab eventKey="UnAnswered questions" title="UnAnswered questions">
                             <ul>
                                 {unAnsweredQuestions.map((question)=>(
-                                    <li key={question}><AllQuestions id={question} type={'unanswered'}/></li>
+                                    <li key={question}><GeneralQuestion id={question} type={'unanswered'}/></li>
                                 ))}
                             </ul>
                         </Tab>
@@ -29,7 +29,7 @@ class Home extends Component {
                         <Tab eventKey="Answered questions" title="Answered questions">
                             <ul>
                                 {answeredQuestions.map((question)=>(
-                                    <li key={question}><AllQuestions id={question} type={'answered'}/></li>
+                                    <li key={question}><GeneralQuestion id={question} type={'answered'}/></li>
                                 ))}
                             </ul>
                         </Tab>

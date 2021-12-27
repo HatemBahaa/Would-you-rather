@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 
 
-class AllQuestions extends Component {
+class GeneralQuestion extends Component {
 
 
     render(){
@@ -23,22 +23,6 @@ class AllQuestions extends Component {
                             <Card.Text>
                                 {question.optionOne.text}
                             </Card.Text>
-                            
-                            {/* {questionType === 'unanswered' && 
-                            <Link to={`/questions/${id}`}>
-                                <Button variant="outline-success">
-                                    View Poll
-                                </Button>
-                            </Link>
-                            }
-
-                            {questionType === 'answered' && 
-                            <Link to={`/questions/${id}`}>
-                                <Button variant="outline-success">
-                                    View Poll
-                                </Button>
-                            </Link>
-                            } */}
 
                             {questionType === 'unanswered' && 
                             <Link to={{
@@ -80,4 +64,4 @@ function mapStateToProps({questions, users, authedUser}, {id, type}){
     }
 }
 
-export default connect(mapStateToProps)(AllQuestions)
+export default connect(mapStateToProps)(GeneralQuestion)

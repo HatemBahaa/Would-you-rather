@@ -37,7 +37,7 @@ class LogIn extends Component {
         const {users,location} = this.props
         
        if(this.state.redirect){         
-            return <Redirect to= {location.state?.from || '/home'} />    
+            return <Redirect to= { location.state?.from || '/home'} />    
         }
         
         return(
